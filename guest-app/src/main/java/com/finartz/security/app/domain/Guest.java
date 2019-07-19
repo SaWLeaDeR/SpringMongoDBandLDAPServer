@@ -1,8 +1,11 @@
 package com.finartz.security.app.domain;
 
+
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 public class Guest {
+    @Indexed(unique = true)
     private ObjectId id;
     private String firstName;
     private String lastName;

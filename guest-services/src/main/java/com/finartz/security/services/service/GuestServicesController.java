@@ -1,5 +1,8 @@
-package com.finartz.security.services;
+package com.finartz.security.services.service;
 
+import com.finartz.security.services.repository.GuestRepository;
+import com.finartz.security.services.ui.Guest;
+import com.finartz.security.services.ui.model.GuestModel;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

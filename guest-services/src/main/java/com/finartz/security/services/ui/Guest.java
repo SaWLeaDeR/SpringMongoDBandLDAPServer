@@ -1,11 +1,13 @@
-package com.finartz.security.services;
+package com.finartz.security.services.ui;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 
 public class Guest {
     @Id
+    @Indexed(unique = true)
     private ObjectId _id;
     private String firstName;
     private String lastName;

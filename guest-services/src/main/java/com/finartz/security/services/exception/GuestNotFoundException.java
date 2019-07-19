@@ -1,4 +1,4 @@
-package com.finartz.security.services;
+package com.finartz.security.services.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

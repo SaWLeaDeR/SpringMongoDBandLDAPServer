@@ -1,6 +1,8 @@
 package com.finartz.security.services;
 
 
+import com.finartz.security.services.repository.GuestRepository;
+import com.finartz.security.services.ui.Guest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

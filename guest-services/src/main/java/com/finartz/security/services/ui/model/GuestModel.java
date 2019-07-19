@@ -1,4 +1,6 @@
-package com.finartz.security.services;
+package com.finartz.security.services.ui.model;
+
+import com.finartz.security.services.ui.Guest;
 
 public class GuestModel {
     private String firstName;
@@ -65,7 +67,7 @@ public class GuestModel {
         this.phoneNumber = phoneNumber;
     }
 
-    Guest translateModelToGuest(){
+    public Guest translateModelToGuest(){
         Guest guest = new Guest();
         guest.setFirstName(this.firstName);
         guest.setLastName(this.lastName);
