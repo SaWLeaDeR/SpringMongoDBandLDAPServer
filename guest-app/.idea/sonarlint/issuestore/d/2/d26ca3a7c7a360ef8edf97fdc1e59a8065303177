@@ -1,5 +1,5 @@
 
-osquid:S00116"WRename this field "challenge_ts" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ώΛΐ
-ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(φ΄έ“ωÿÿÿÿ
 ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(υγή‹ψÿÿÿÿ
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(φ΄έ“ωÿÿÿÿ
+osquid:S00116"WRename this field "challenge_ts" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ώΛΐ
 nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(υγή‹ψÿÿÿÿ

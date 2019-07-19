@@ -31,6 +31,7 @@ public class Guest {
         this.state = state;
         this.phoneNumber = phoneNumber;
     }
+
     @Override
     public String toString() {
         return "Guest{" +

@@ -19,6 +19,8 @@ import java.util.List;
 @RequestMapping("/")
 public class GuestController {
 
+    private static final String GUESTVIEW = "guest-view";
+    private static final String GUEST = "guest";
     private final GuestService guestService;
 
     public GuestController(GuestService guestService) {
@@ -53,7 +55,7 @@ public class GuestController {
     @GetMapping(value = "/guests/add")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String getAddGuestForm(Model model) {
-        return "guest-view";
+        return GUESTVIEW;
     }
 
     @PostMapping(value = "/guests")
@@ -62,7 +64,7 @@ public class GuestController {
                                  @ModelAttribute GuestModel guestModel,
                                  @RequestParam(name = "g-recaptcha-response") String captchaResponse) {
         Guest guest = this.guestService.addGuest(guestModel, captchaResponse);
-        model.addAttribute("guest", guest);
+        model.addAttribute(GUEST, guest);
         request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.TEMPORARY_REDIRECT);
         return new ModelAndView("redirect:/guests/" + guest.getId());
     }
@@ -71,17 +73,17 @@ public class GuestController {
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getGuest(Model model, @PathVariable ObjectId id) {
         Guest guest = this.guestService.getGuest(id);
-        model.addAttribute("guest", guest);
-        return "guest-view";
+        model.addAttribute(GUEST, guest);
+        return GUESTVIEW;
     }
 
     @PostMapping(value = "/guests/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateGuest(Model model, @PathVariable ObjectId id, @ModelAttribute GuestModel guestModel) {
         Guest guest = this.guestService.updateGuest(id, guestModel);
-        model.addAttribute("guest", null);
+        model.addAttribute(GUEST, null);
         model.addAttribute("guestModel", new GuestModel());
-        return "guest-view";
+        return GUESTVIEW;
     }
 
     @DeleteMapping(value = "/guests/{id}")

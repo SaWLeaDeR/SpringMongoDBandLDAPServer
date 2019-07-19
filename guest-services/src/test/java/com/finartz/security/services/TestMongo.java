@@ -48,13 +48,13 @@ public class TestMongo {
 
     @Test
     public void testFindOne() {
-        Guest guest = mongoOps.findOne(query(where("firstName").is("fatih")), Guest.class);
-        assertThat(guest.getFirstName(), is(equalTo("fatih")));
+        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
+        assertThat(guest.getFirstName(), is(equalTo("Ann")));
     }
 
     @Test
     public void testDeleteUsingObject() {
-        Guest guest = mongoOps.findOne(query(where("firstName").is("fatih")), Guest.class);
+        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
 
         guestRepository.delete(guest);
 
@@ -63,8 +63,7 @@ public class TestMongo {
 
     @Test
     public void testDeleteFindOne() {
-        List<Guest> guestList = guestRepository.findAll();
-        Guest guest = guestList.get(404);
+        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
         guestRepository.delete(guestRepository.findBy_id(guest.getId()));
     }
 
