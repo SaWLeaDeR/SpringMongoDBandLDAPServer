@@ -1,29 +1,30 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}"lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}" lang="en">
 <head>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <title>Home</title>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#delete').on('click', function() {
+            $('#delete').on('click', function () {
                 if (confirm("Are you sure you want to delete this resource?")) {
                     $.ajax({
                         method: 'DELETE',
-                    }).done(function() {
-                            console.log('deleted');
-                            // window.location.reload(true)
-                            window.location.replace("/guests");
-                        });
+                    }).done(function () {
+                        console.log('deleted');
+                        // window.location.reload(true)
+                        window.location.replace("/guests");
+                    });
                 }
             });
         })
 
     </script>
     <script>
-        (function($) {
-            $.fn.inputFilter = function(inputFilter) {
-                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+        (function ($) {
+            $.fn.inputFilter = function (inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
                     if (inputFilter(this.value)) {
                         this.oldValue = this.value;
                         this.oldSelectionStart = this.selectionStart;
@@ -36,18 +37,18 @@
             };
         }(jQuery));
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Restrict input to digits by using a regular expression filter.
-            $("#phoneNumber").inputFilter(function(value) {
+            $("#phoneNumber").inputFilter(function (value) {
                 return /^\d*$/.test(value);
             });
         });
     </script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var recaptcha = document.forms.item("g-recaptcha-response");
             recaptcha.required = true;
-            recaptcha.oninvalid = function(e) {
+            recaptcha.oninvalid = function (e) {
                 alert("Please complete the captcha");
             }
         }
@@ -59,49 +60,62 @@
 <div layout:fragment="content">
     <div class="container main-content">
         <h3>Guest View</h3>
-        <form method="post" action="#" th:action="${guest != null} ? '/guests/'+${guest.id} : '/guests'" th:object="${guestModel}">
+        <form method="post" action="#" th:action="${guest != null} ? '/guests/'+${guest.id} : '/guests'"
+              th:object="${guestModel}">
 
             <div class="form-row">
                 <div class="col">
                     <input
                             th:id="firstName"
-                            th:name="firstName" type="text" class="form-control" placeholder="First Name" required="required" maxlength="10"
+                            th:name="firstName" type="text" class="form-control" placeholder="First Name"
+                            required="required" maxlength="10"
                             th:value="${guest != null} ? ${guest.firstName}"/>
                 </div>
                 <div class="col">
                     <input th:id="lastName"
-                           th:name="lastName" type="text" class="form-control" placeholder="Last Name" required="required" maxlength="10"
+                           th:name="lastName" type="text" class="form-control" placeholder="Last Name"
+                           required="required" maxlength="10"
                            th:value="${guest != null} ? ${guest.lastName}"/>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input th:id="emailAddress" th:name="emailAddress" type="text" minlength="5" maxlength="20" class="form-control" placeholder="Email Address" th:value="${guest != null} ? ${guest.emailAddress}"/>
+                    <input th:id="emailAddress" th:name="emailAddress" type="text" minlength="5" maxlength="20"
+                           class="form-control" placeholder="Email Address"
+                           th:value="${guest != null} ? ${guest.emailAddress}"/>
                 </div>
                 <div class="col">
-                    <input th:id="phoneNumber" th:name="phoneNumber" type="text" class="form-control" maxlength="10" placeholder="Phone Number" th:value="${guest != null} ? ${guest.phoneNumber}"/>
+                    <input th:id="phoneNumber" th:name="phoneNumber" type="text" class="form-control" maxlength="10"
+                           placeholder="Phone Number" th:value="${guest != null} ? ${guest.phoneNumber}"/>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input th:id="address" th:name="address" type="text" class="form-control" placeholder="Address" maxlength="50" th:value="${guest != null} ? ${guest.address}"/>
+                    <input th:id="address" th:name="address" type="text" class="form-control" placeholder="Address"
+                           maxlength="50" th:value="${guest != null} ? ${guest.address}"/>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-7">
-                    <input th:id="country" th:name="country" type="text" class="form-control" placeholder="Country" maxlength="10" th:value="${guest != null} ? ${guest.country}"/>
+                    <input th:id="country" th:name="country" type="text" class="form-control" placeholder="Country"
+                           maxlength="10" th:value="${guest != null} ? ${guest.country}"/>
                 </div>
                 <div class="col">
-                    <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State" maxlength="2" th:value="${guest != null} ? ${guest.state}"/>
+                    <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State"
+                           maxlength="2" th:value="${guest != null} ? ${guest.state}"/>
                 </div>
-                <div class="form-row" id="myForm">
-                    <div class="g-recaptcha" data-expired-callback="capcha_expired" data-sitekey="6LdiZa4UAAAAAOC4_NbD16zNuPycvmrw7lOtqEbC"></div>
+
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-row" id="myForm">
+                        <div class="g-recaptcha" data-expired-callback="capcha_expired"
+                             data-sitekey="6LdiZa4UAAAAAOC4_NbD16zNuPycvmrw7lOtqEbC"></div>
+                    </div>
                 </div>
             </div>
             <div class="form-row">
                 <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-            <div class="form-row">
                 <button id="delete" class="btn btn-danger" type="button">Delete</button>
             </div>
         </form>

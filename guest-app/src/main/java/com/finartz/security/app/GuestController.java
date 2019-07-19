@@ -85,6 +85,7 @@ public class GuestController {
     }
 
     @DeleteMapping(value = "/guests/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteGuest(@PathVariable ObjectId id) {
         this.guestService.deleteGuestDemo(id);
         return "guests-view";

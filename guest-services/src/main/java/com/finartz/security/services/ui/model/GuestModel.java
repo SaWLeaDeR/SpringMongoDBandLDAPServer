@@ -11,6 +11,16 @@ public class GuestModel {
     private String state;
     private String phoneNumber;
 
+    public GuestModel(String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.address = address;
+        this.country = country;
+        this.state = state;
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getFirstName() {
         return firstName;
     }
