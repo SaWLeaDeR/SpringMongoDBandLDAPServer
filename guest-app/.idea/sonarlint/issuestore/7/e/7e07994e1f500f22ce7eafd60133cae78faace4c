@@ -1,0 +1,5 @@
+
+gsquid:S11928"KDefine a constant instead of duplicating this literal "guest-view" 3 times.(„š£ûıÿÿÿÿ
+Usquid:S1854Q"9Remove this useless assignment to local variable "guest".(±èÒşÿÿÿÿ
+Fsquid:S1481Q"*Remove this unused "guest" local variable.(±èÒşÿÿÿÿ
+]squid:S1192A"FDefine a constant instead of duplicating this literal "guest" 3 times.(•ú¤â
