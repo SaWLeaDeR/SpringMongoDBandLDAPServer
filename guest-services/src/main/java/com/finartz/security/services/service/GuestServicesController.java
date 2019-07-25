@@ -3,7 +3,6 @@ package com.finartz.security.services.service;
 import com.finartz.security.services.repository.GuestRepository;
 import com.finartz.security.services.ui.Guest;
 import com.finartz.security.services.ui.model.GuestModel;
-import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -27,37 +26,37 @@ public class GuestServicesController {
 
     private GuestRepository repository;
 
-    public GuestServicesController(GuestRepository repository){
+    public GuestServicesController(GuestRepository repository) {
         super();
         this.repository = repository;
     }
 
     @GetMapping
-    public List<Guest> getAllGuests(){
+    public List<Guest> getAllGuests() {
         return new ArrayList<>(this.repository.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<Guest> addGuest(@RequestBody GuestModel model){
+    public ResponseEntity<Guest> addGuest(@RequestBody GuestModel model) {
         Guest guest = this.repository.save(model.translateModelToGuest());
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(guest.getId()).toUri();
         return ResponseEntity.created(location).body(guest);
     }
 
     @GetMapping("/{id}")
-    public Guest getGuest(@PathVariable("id") ObjectId id) {
+    public Guest getGuest(@PathVariable("id") String id) {
         return repository.findBy_id(id);
     }
 
     @PutMapping("/{id}")
-    public void updateGuest(@PathVariable("id") ObjectId id, @Valid @RequestBody Guest guest) {
+    public void updateGuest(@PathVariable("id") String id, @Valid @RequestBody Guest guest) {
         guest.setId(id);
         repository.save(guest);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.RESET_CONTENT)
-    public void deleteGuest(@PathVariable ObjectId id) {
+    public void deleteGuest(@PathVariable String id) {
         repository.delete(repository.findBy_id(id));
     }
 }

@@ -66,6 +66,15 @@
             <div class="form-row">
                 <div class="col">
                     <input
+                            th:id="userName"
+                            th:name="userName" type="text" class="form-control" placeholder="User Name"
+                            required="required" maxlength="10"
+                            th:value="${guest != null} ? ${guest.userName}"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input
                             th:id="firstName"
                             th:name="firstName" type="text" class="form-control" placeholder="First Name"
                             required="required" maxlength="10"
@@ -94,26 +103,30 @@
                     <input th:id="address" th:name="address" type="text" class="form-control" placeholder="Address"
                            maxlength="50" th:value="${guest != null} ? ${guest.address}"/>
                 </div>
-            </div>
-            <div class="form-row">
                 <div class="col-7">
                     <input th:id="country" th:name="country" type="text" class="form-control" placeholder="Country"
                            maxlength="10" th:value="${guest != null} ? ${guest.country}"/>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col">
                     <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State"
                            maxlength="2" th:value="${guest != null} ? ${guest.state}"/>
                 </div>
-
-            </div>
-            <div class="form-row">
                 <div class="col">
-                    <div class="form-row" id="myForm">
-                        <div class="g-recaptcha" data-expired-callback="capcha_expired"
-                             data-sitekey="6LdiZa4UAAAAAOC4_NbD16zNuPycvmrw7lOtqEbC"></div>
-                    </div>
+                    <input th:id="password" th:name="password" type="password" class="form-control"
+                           placeholder="Password"
+                           maxlength="16" th:value="${guest != null} ? ${guest.password}"/>
                 </div>
             </div>
+<!--            <div class="form-row">-->
+<!--                <div class="col">-->
+<!--                    <div class="form-row" id="myForm">-->
+<!--                        <div class="g-recaptcha" data-expired-callback="capcha_expired"-->
+<!--                             data-sitekey="6LdiZa4UAAAAAOC4_NbD16zNuPycvmrw7lOtqEbC"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="form-row">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button id="delete" class="btn btn-danger" type="button">Delete</button>

@@ -1,3 +1,4 @@
 
-fsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“õŸ„
-isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“õŸ„
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è˜¯ªøÿÿÿÿ
+ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è˜¯ªøÿÿÿÿ
+dsquid:UselessImportCheck"4Remove this unused import 'org.bson.types.ObjectId'.(Ü¡‰çıÿÿÿÿ8üùÅÂ-

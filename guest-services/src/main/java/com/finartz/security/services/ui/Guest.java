@@ -8,7 +8,9 @@ import org.springframework.data.mongodb.core.index.Indexed;
 public class Guest {
     @Id
     @Indexed(unique = true)
-    private ObjectId _id;
+    private String _id;
+    @Indexed(unique = true)
+    private String userName;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -16,12 +18,13 @@ public class Guest {
     private String country;
     private String state;
     private String phoneNumber;
+    private String password;
 
     public Guest() {
         super();
     }
 
-    public Guest(ObjectId _id, String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
+    public Guest(String _id, String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
         this._id = _id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,6 +33,7 @@ public class Guest {
         this.country = country;
         this.state = state;
         this.phoneNumber = phoneNumber;
+
     }
 
     @Override
@@ -46,12 +50,20 @@ public class Guest {
                 '}';
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return _id;
     }
 
-    public void setId(ObjectId _id) {
+    public void setId(String _id) {
         this._id = _id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -108,5 +120,13 @@ public class Guest {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

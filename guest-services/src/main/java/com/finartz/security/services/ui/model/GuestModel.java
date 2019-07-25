@@ -3,6 +3,7 @@ package com.finartz.security.services.ui.model;
 import com.finartz.security.services.ui.Guest;
 
 public class GuestModel {
+    private String userName;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -10,6 +11,7 @@ public class GuestModel {
     private String country;
     private String state;
     private String phoneNumber;
+    private String password;
 
     public GuestModel(String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
         this.firstName = firstName;
@@ -19,6 +21,14 @@ public class GuestModel {
         this.country = country;
         this.state = state;
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -77,15 +87,25 @@ public class GuestModel {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Guest translateModelToGuest() {
         Guest guest = new Guest();
         guest.setFirstName(this.firstName);
+        guest.setUserName(this.userName);
         guest.setLastName(this.lastName);
         guest.setEmailAddress(this.emailAddress);
         guest.setAddress(this.address);
         guest.setCountry(this.country);
         guest.setState(this.state);
         guest.setPhoneNumber(this.phoneNumber);
+        guest.setPassword(this.password);
         return guest;
     }
 }

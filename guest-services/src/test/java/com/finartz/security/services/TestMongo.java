@@ -3,6 +3,7 @@ package com.finartz.security.services;
 import com.finartz.security.services.repository.GuestRepository;
 import com.finartz.security.services.ui.Guest;
 import com.finartz.security.services.ui.model.GuestModel;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,28 @@ public class TestMongo {
     @Autowired
     private MongoOperations mongoOps;
 
+    @Before
+    public void init() {
+
+        guestRepository.save(new GuestModel(
+                "China", "Last","email@email.com","address Test","Turkey","NW","5448964123")
+                .translateModelToGuest());
+        guestRepository.save(new GuestModel(
+                "India", "Last","email@email.com","address Test","Turkey","NW","5448964123")
+                .translateModelToGuest());
+        guestRepository.save(new GuestModel(
+                "USA", "Last","email@email.com","address Test","Turkey","NW","5448964123")
+                .translateModelToGuest());
+        guestRepository.save(new GuestModel(
+                "Indonesia", "Last","email@email.com","address Test","Turkey","NW","5448964123")
+                .translateModelToGuest());
+        guestRepository.save(new GuestModel(
+                "Brazil", "Last","email@email.com","address Test","Turkey","NW","5448964123")
+                .translateModelToGuest());
+    }
 
     @Test
-    public void test_AllUser() {
+    public void test_GetAllUser() {
         List<Guest> guestList = guestRepository.findAll();
         for (Guest guest : guestList) {
             System.out.println("UserId: " + guest.getId());
@@ -42,19 +62,14 @@ public class TestMongo {
     }
 
     @Test
-    public void testDeleteUsingId() {
-        assertThat(mongoOps.findById(3L, Guest.class), is(equalTo(null)));
-    }
-
-    @Test
     public void testFindOne() {
-        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
-        assertThat(guest.getFirstName(), is(equalTo("Ann")));
+        Guest guest = mongoOps.findOne(query(where("firstName").is("Anne")), Guest.class);
+        assertThat(guest.getFirstName(), is(equalTo("Anne")));
     }
 
     @Test
     public void testDeleteUsingObject() {
-        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
+        Guest guest = mongoOps.findOne(query(where("firstName").is("Anne")), Guest.class);
 
         guestRepository.delete(guest);
 
@@ -62,18 +77,28 @@ public class TestMongo {
     }
 
     @Test
-    public void testDeleteFindOne() {
-        Guest guest = mongoOps.findOne(query(where("firstName").is("Ann")), Guest.class);
-        guestRepository.delete(guestRepository.findBy_id(guest.getId()));
-    }
-
-    @Test
-    public void testSave() {
-        GuestModel model = new GuestModel("Another", "asdfas", "email", "adress", "country", "state", "phoneNumber");
+    public void testAddGuest() {
+        GuestModel model = new GuestModel("Another", "asdfas", "email", "address", "country", "state", "phoneNumber");
         Guest continentInserted = guestRepository.save(model.translateModelToGuest());
         Query query2 = new Query();
         query2.addCriteria(Criteria.where("firstName").is("Another"));
         assertThat(continentInserted.getFirstName(), is(equalTo("Another")));
         assertThat(mongoOps.findOne(query2, Guest.class).getFirstName(), is(equalTo("Another")));
+    }
+
+    @Test
+    public void testUpdateGuest(){
+        GuestModel model = new GuestModel("Another", "asdfas", "email", "address", "country", "state", "phoneNumber");
+        Guest guestInserted = guestRepository.save(model.translateModelToGuest());
+        Query query = new Query();
+        query.addCriteria(Criteria.where("firstName").is("Another"));
+        assertThat(guestInserted.getFirstName(), is(equalTo("Another")));
+
+        model.setFirstName("UpdateTest");
+        Guest guestUpdated = guestRepository.save(model.translateModelToGuest());
+        Query query2 = new Query();
+        query2.addCriteria(Criteria.where("firstName").is("UpdateTest"));
+        assertThat(guestUpdated.getFirstName(), is(equalTo("UpdateTest")));
+        assertThat(mongoOps.findOne(query2, Guest.class).getFirstName(), is(equalTo("UpdateTest")));
     }
 }

@@ -15,6 +15,15 @@ objectClass: top
 objectClass: organizationalUnit
 ou: groups
 
+dn: uid=john,ou=people,dc=frankmoley,dc=com
+objectclass: inetOrgPerson
+cn: John Doe
+sn: John
+givenName: test
+mail: test@frankmoley.com
+uid: john
+userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+
 dn: uid=fpmoles,ou=people,dc=frankmoley,dc=com
 objectclass: top
 objectclass: person
@@ -25,6 +34,36 @@ sn: Moley
 givenName: Frank
 mail: fpmoles@frankmoley.com
 uid: fpmoles
+userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+
+dn: uid=admin,ou=people,dc=frankmoley,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: admin Moley
+sn: admin
+givenName: Admin
+mail: admin@frankmoley.com
+uid: admin
+userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+
+dn: uid=jihn,ou=people,dc=frankmoley,dc=com
+objectclass: inetOrgPerson
+cn: Jihn Die
+sn: Jihn
+givenName: jihn
+mail: jihn@frankmoley.com
+uid: jihn
+userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
+
+dn: uid=jahn,ou=people,dc=frankmoley,dc=com
+objectclass: inetOrgPerson
+cn: Jahn Dae
+sn: Jahn
+givenName: jahn
+mail: jahn@frankmoley.com
+uid: jahn
 userPassword: {SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=
 
 dn: uid=jdoe,ou=people,dc=frankmoley,dc=com
@@ -41,11 +80,17 @@ objectclass: top
 objectclass: groupOfUniqueNames
 cn: admins
 uniqueMember: uid=fpmoles,ou=people,dc=frankmoley,dc=com
+uniqueMember: uid=admin,ou=people,dc=frankmoley,dc=com
 
 dn: cn=user,ou=groups,dc=frankmoley,dc=com
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: users
+uniqueMember: uid=john,ou=people,dc=frankmoley,dc=com
+uniqueMember: uid=jihn,ou=people,dc=frankmoley,dc=com
+uniqueMember: uid=jahn,ou=people,dc=frankmoley,dc=com
 uniqueMember: uid=fpmoles,ou=people,dc=frankmoley,dc=com
+uniqueMember: uid=admin,ou=people,dc=frankmoley,dc=com
 uniqueMember: uid=jdoe,ou=people,dc=frankmoley,dc=com
+
 

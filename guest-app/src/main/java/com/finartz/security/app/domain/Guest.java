@@ -1,12 +1,18 @@
 package com.finartz.security.app.domain;
 
-
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 
-public class Guest {
+import java.io.Serializable;
+
+public class Guest implements Serializable {
+
+
+    private static final long serialVersionUID = -5904202226422018889L;
     @Indexed(unique = true)
-    private ObjectId id;
+    private String id;
+    @Indexed(unique = true)
+    private String userName;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -14,13 +20,22 @@ public class Guest {
     private String country;
     private String state;
     private String phoneNumber;
+    private String password;
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -77,5 +92,13 @@ public class Guest {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

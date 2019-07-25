@@ -10,7 +10,8 @@ import org.springframework.web.client.RestTemplate;
 @ServletComponentScan
 public class GuestAppApplication {
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(GuestAppApplication.class, args);
     }
 
@@ -18,4 +19,6 @@ public class GuestAppApplication {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+
 }

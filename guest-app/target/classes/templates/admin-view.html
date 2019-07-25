@@ -1,0 +1,143 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}" lang="en">
+<head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>Home</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#delete').on('click', function () {
+                if (confirm("Are you sure you want to delete this resource?")) {
+                    $.ajax({
+                        method: 'DELETE',
+                    }).done(function () {
+                        console.log('deleted');
+                        // window.location.reload(true)
+                        window.location.replace("/admins");
+                    });
+                }
+            });
+        })
+
+    </script>
+    <script>
+        (function ($) {
+            $.fn.inputFilter = function (inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                    if (inputFilter(this.value)) {
+                        this.oldValue = this.value;
+                        this.oldSelectionStart = this.selectionStart;
+                        this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                        this.value = this.oldValue;
+                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    }
+                });
+            };
+        }(jQuery));
+
+        $(document).ready(function () {
+            // Restrict input to digits by using a regular expression filter.
+            $("#phoneNumber").inputFilter(function (value) {
+                return /^\d*$/.test(value);
+            });
+            $("#age").inputFilter(function (value) {
+                return /^\d*$/.test(value);
+            });
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            var recaptcha = document.forms.item("g-recaptcha-response");
+            recaptcha.required = true;
+            recaptcha.oninvalid = function (e) {
+                alert("Please complete the captcha");
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+<div layout:fragment="content">
+    <div class="container main-content">
+        <h3>Admin User View</h3>
+        <form method="post" action="#" th:action="${admin != null} ? '/admins/'+${admin.id} : '/admins'"
+              th:object="${adminModel}">
+
+            <div class="form-row">
+                <div class="col">
+                    <input th:id="userName"
+                           th:name="userName" type="text" class="form-control" placeholder="User Name"
+                           required="required" maxlength="10"
+                           th:value="${admin != null} ? ${admin.userName}"/>
+                </div>
+                <div class="col">
+                    <input
+                            th:id="firstName"
+                            th:name="firstName" type="text" class="form-control" placeholder="First Name"
+                            required="required" maxlength="10"
+                            th:value="${admin != null} ? ${admin.firstName}"/>
+                </div>
+                <div class="col">
+                    <input th:id="lastName"
+                           th:name="lastName" type="text" class="form-control" placeholder="Last Name"
+                           required="required" maxlength="10"
+                           th:value="${admin != null} ? ${admin.lastName}"/>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input th:id="age" th:name="age" type="text" class="form-control" placeholder="age"
+                           th:value="${admin != null} ? ${admin.age}"/>
+                </div>
+                <div class="col">
+                    <input th:id="phoneNumber" th:name="phoneNumber" type="text" class="form-control" maxlength="10" placeholder="Phone Number" th:value="${admin != null} ? ${admin.phoneNumber}"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input th:id="gender" th:name="gender" type="text" class="form-control" placeholder="gender"
+                           maxlength="50" th:value="${admin != null} ? ${admin.gender}"/>
+                </div>
+                <div class="col-7">
+                    <input th:id="job" th:name="job" type="text" class="form-control" placeholder="job"
+                           maxlength="10" th:value="${admin != null} ? ${admin.job}"/>
+                </div>
+                <div class="col">
+                    <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State"
+                           maxlength="2" th:value="${admin != null} ? ${admin.state}"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input th:id="hobbies" th:name="hobbies" type="text" class="form-control" placeholder="hobbies"
+                           maxlength="50" th:value="${admin != null} ? ${admin.hobbies}"/>
+                </div>
+                <div class="col">
+                    <input th:id="education" th:name="education" type="text" class="form-control" placeholder="education"
+                           maxlength="50" th:value="${admin != null} ? ${admin.education}"/>
+                </div>
+                <div class="col">
+                    <input th:id="userPassword" th:name="userPassword" type="password" class="form-control" placeholder="password"
+                           maxlength="50" th:value="${admin != null} ? ${admin.userPassword}"/>
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="delete" class="btn btn-danger" type="button">Delete</button>
+            </div>
+        </form>
+        <a th:href="@{/admins}">Return to All Admin Users</a>
+    </div>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script th:src="@{/js/table.js}"></script>
+</div>
+</body>
+</html>

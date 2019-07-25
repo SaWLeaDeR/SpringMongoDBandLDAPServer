@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}"lang="en">
 <head>
     <title>Home</title>
+
 </head>
 <body>
 
@@ -17,15 +18,16 @@
         </div>
         <table id="table" class="table table-striped table-sm">
             <thead>
-                <th scope="col">Id</th>
+                <th scope="col">UserName</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Email Address</th>
+
             </thead>
             <tbody>
                 <tr th:each="guest : ${guests}">
-                    <th scope="row"><a th:href="@{'/guests/' + ${guest.id}}" th:text="${guest.id}"></a></th>
+                    <th scope="row"><a th:href="@{'/guests/' + ${guest.id}}" th:text="${guest.userName}"></a></th>
                     <td th:text="${guest.phoneNumber}"></td>
                     <td th:text="${guest.firstName}"></td>
                     <td th:text="${guest.lastName}"></td>
@@ -36,6 +38,7 @@
     </div>
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script th:src="@{/js/table.js}"></script>
+    <script th:src="@{/js/quotes.js}"></script>
 </div>
 </body>
 </html>

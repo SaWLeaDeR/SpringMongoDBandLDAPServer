@@ -97,5 +97,6 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-reactivestreams:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.12" level="project" />
   </component>
 </module>

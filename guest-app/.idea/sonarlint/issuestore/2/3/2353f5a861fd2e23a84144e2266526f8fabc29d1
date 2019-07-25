@@ -1,0 +1,4 @@
+
+ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í—ø¨ýÿÿÿÿ
+]squid:UselessImportCheck"4Remove this unused import 'org.bson.types.ObjectId'.(Ü¡‰çýÿÿÿÿ
+isquid:S00117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÉÆ—
