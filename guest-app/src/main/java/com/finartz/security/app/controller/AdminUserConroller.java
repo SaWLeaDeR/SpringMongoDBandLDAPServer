@@ -83,6 +83,4 @@ public class AdminUserConroller {
         this.adminUserServiceImpl.deleteAdminUser(id);
         return "admins-view";
     }
-
-
 }

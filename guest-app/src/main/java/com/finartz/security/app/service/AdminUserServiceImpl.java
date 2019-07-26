@@ -88,6 +88,5 @@ public class AdminUserServiceImpl implements AdminUserService {
         String url = adminServiceUrl + ADMINS + SLASH + id;
         HttpEntity<AdminModel> request = new HttpEntity<>(headers);
         restTemplate.exchange(url, HttpMethod.DELETE, request, Void.class, 101);
-
     }
 }
