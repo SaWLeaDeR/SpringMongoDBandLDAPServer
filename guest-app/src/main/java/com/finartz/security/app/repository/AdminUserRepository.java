@@ -2,6 +2,7 @@ package com.finartz.security.app.repository;
 
 
 import com.finartz.security.app.domain.AdminUser;
+import com.finartz.security.app.domain.GuestModel;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
