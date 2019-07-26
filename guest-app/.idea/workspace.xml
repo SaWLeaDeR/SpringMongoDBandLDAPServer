@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef3c821b-ca82-4119-ab03-92663b7e02a2" name="Default Changelist" comment="fixup! intellij">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="0240b6fe-2c09-484b-9e39-0392527f49aa" name="intellij" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java" afterDir="false" />
     </list>
+    <list id="0240b6fe-2c09-484b-9e39-0392527f49aa" name="intellij" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../guest-services/target/" />
@@ -38,8 +36,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+            <state relative-caret-position="160">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -206,7 +207,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -348,7 +349,7 @@
       <workItem from="1564075507962" duration="1595000" />
       <workItem from="1564119083631" duration="5471000" />
       <workItem from="1564125032274" duration="182000" />
-      <workItem from="1564125260601" duration="1873000" />
+      <workItem from="1564125260601" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1564125577115</created>
@@ -414,7 +415,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42026000" />
+    <option name="totallyTimeSpent" value="42350000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -919,8 +920,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        <state relative-caret-position="160">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
