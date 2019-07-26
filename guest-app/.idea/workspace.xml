@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef3c821b-ca82-4119-ab03-92663b7e02a2" name="Default Changelist" comment="fixup! intellij">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="ef3c821b-ca82-4119-ab03-92663b7e02a2" name="Default Changelist" comment="fixup! intellij" />
     <list id="0240b6fe-2c09-484b-9e39-0392527f49aa" name="intellij" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +31,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/finartz/security/app/repository/AdminUserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -41,6 +39,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/guest-view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-724">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -184,6 +191,21 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="guest-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,7 +371,7 @@
       <workItem from="1564075507962" duration="1595000" />
       <workItem from="1564119083631" duration="5471000" />
       <workItem from="1564125032274" duration="182000" />
-      <workItem from="1564125260601" duration="2197000" />
+      <workItem from="1564125260601" duration="2543000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1564125577115</created>
@@ -415,7 +437,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42350000" />
+    <option name="totallyTimeSpent" value="42696000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,8 +450,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15938166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15938166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -446,16 +469,16 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.282516" side_tool="true" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="SonarLint" order="12" weight="0.32936078" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.28304905" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="SonarLint" order="12" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="15" sideWeight="0.717484" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.71695095" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Tail" order="17" />
-      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.30119178" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" sideWeight="0.49946696" weight="0.30119178" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -682,13 +705,6 @@
           <folding>
             <element signature="e#1318#1319#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/guest-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -925,6 +941,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/guest-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-724">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
         </state>
       </provider>
     </entry>
