@@ -1,6 +1,5 @@
 package com.finartz.security.services.ui;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 
@@ -24,8 +23,11 @@ public class Guest {
         super();
     }
 
-    public Guest(String _id, String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
+    public Guest(String _id, String userName, String firstName,
+                 String lastName, String emailAddress, String address,
+                 String country, String state, String phoneNumber, String password) {
         this._id = _id;
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -33,7 +35,7 @@ public class Guest {
         this.country = country;
         this.state = state;
         this.phoneNumber = phoneNumber;
-
+        this.password = password;
     }
 
     @Override

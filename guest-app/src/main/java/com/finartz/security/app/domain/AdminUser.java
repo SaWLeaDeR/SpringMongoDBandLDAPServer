@@ -24,6 +24,25 @@ public class AdminUser implements Serializable {
     private String education;
     private String userPassword;
 
+    public AdminUser() {
+    }
+
+    public AdminUser(String _id, String userName, String firstName, String lastName,
+                     String phoneNumber, int age, String gender, String state, String job,
+                     List<String> hobbies, String education, String userPassword) {
+        this._id = _id;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
+        this.gender = gender;
+        this.state = state;
+        this.job = job;
+        this.hobbies = hobbies;
+        this.education = education;
+        this.userPassword = userPassword;
+    }
 
     public String getId() {
         return _id;

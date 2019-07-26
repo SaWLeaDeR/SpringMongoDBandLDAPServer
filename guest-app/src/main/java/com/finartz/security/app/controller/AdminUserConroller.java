@@ -2,7 +2,7 @@ package com.finartz.security.app.controller;
 
 import com.finartz.security.app.domain.AdminUser;
 import com.finartz.security.app.model.AdminModel;
-import com.finartz.security.app.service.AdminUserService;
+import com.finartz.security.app.service.AdminUserServiceImpl;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,17 +23,17 @@ public class AdminUserConroller {
 
     private static final String ADMINVIEW = "admin-view";
     private static final String ADMIN = "admin";
-    private final AdminUserService adminUserService;
+    private final AdminUserServiceImpl adminUserServiceImpl;
 
-    public AdminUserConroller(AdminUserService adminUserService) {
+    public AdminUserConroller(AdminUserServiceImpl adminUserServiceImpl) {
         super();
-        this.adminUserService = adminUserService;
+        this.adminUserServiceImpl = adminUserServiceImpl;
     }
 
     @GetMapping(value = "/admins")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getAdminUsers(Model model) {
-        List<AdminUser> admins = this.adminUserService.getAllAdminUser();
+        List<AdminUser> admins = this.adminUserServiceImpl.getAllAdminUser();
         model.addAttribute("admins", admins);
         return "admins-view";
     }
@@ -51,7 +51,7 @@ public class AdminUserConroller {
         String hashedVal = Base64.getEncoder().encodeToString(DigestUtils.sha1(adminModel.getUserPassword().getBytes(Charset.forName("UTF-8"))));
         hashedVal = "{SHA}" + hashedVal;
         adminModel.setUserPassword(hashedVal);
-        AdminUser admin = this.adminUserService.addAdminUser(adminModel, hashedVal);
+        AdminUser admin = this.adminUserServiceImpl.addAdminUser(adminModel, hashedVal);
         model.addAttribute(ADMIN, admin);
         request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.TEMPORARY_REDIRECT);
         return new ModelAndView("redirect:/admins/" + admin.getId());
@@ -60,7 +60,7 @@ public class AdminUserConroller {
     @GetMapping(value = "/admins/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getAdminUser(Model model, @PathVariable String id) {
-        AdminUser adminUser = this.adminUserService.getAdminUser(id);
+        AdminUser adminUser = this.adminUserServiceImpl.getAdminUser(id);
         model.addAttribute(ADMIN, adminUser);
         return ADMINVIEW;
     }
@@ -71,7 +71,7 @@ public class AdminUserConroller {
         String hashedVal = Base64.getEncoder().encodeToString(DigestUtils.sha1(adminModel.getUserPassword().getBytes(Charset.forName("UTF-8"))));
         hashedVal = "{SHA}" + hashedVal;
         adminModel.setUserPassword(hashedVal);
-        this.adminUserService.updateAdminUser(id, adminModel,hashedVal);
+        this.adminUserServiceImpl.updateAdminUser(id, adminModel,hashedVal);
         model.addAttribute(ADMIN, null);
         model.addAttribute("adminModel", new AdminModel());
         return ADMINVIEW;
@@ -80,7 +80,7 @@ public class AdminUserConroller {
     @DeleteMapping(value = "/admins/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteAdminUser(@PathVariable String id) {
-        this.adminUserService.deleteAdminUser(id);
+        this.adminUserServiceImpl.deleteAdminUser(id);
         return "admins-view";
     }
 

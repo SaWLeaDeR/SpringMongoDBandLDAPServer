@@ -1,17 +1,17 @@
 
-bsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(ñé©´
-Xsquid:S3457 "AFormat specifiers should be used instead of string concatenation.(ðöÔ
 gsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(ÜÙæ›øÿÿÿÿ
+Xsquid:S3457 "AFormat specifiers should be used instead of string concatenation.(ðöÔ
+bsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(èáÿÒ
+gsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(üÏêøøÿÿÿÿ
+gsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(¿ÞÅƒÿÿÿÿÿ
+gsquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(ð¯¢Þüÿÿÿÿ
+gsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(—Šôùÿÿÿÿ
+isquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(áÍ8°õ½¾Â-
+Nsquid:S2629 "7Use the built-in formatting to construct this argument.(ðöÔ
+gsquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(Üº¬³ùÿÿÿÿ
 N
 squid:S106!"9Replace this use of System.out or System.err by a logger.(öòÈu
-gsquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(Üº¬³ùÿÿÿÿ
-bsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(èáÿÒ
-Nsquid:S2629 "7Use the built-in formatting to construct this argument.(ðöÔ
-gsquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(ð¯¢Þüÿÿÿÿ
-gsquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(â±‘…ÿÿÿÿÿ
-gsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(üÏêøøÿÿÿÿ
 bsquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(Ã¢Ü£
 bsquid:CommentedOutCodeLine:"<This block of commented-out lines of code should be removed.(ƒÍÈÆ
-isquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(áÍ8°õ½¾Â-
-gsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(—Šôùÿÿÿÿ
-gsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(¿ÞÅƒÿÿÿÿÿ
+bsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(ñé©´
+gsquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(â±‘…ÿÿÿÿÿ

@@ -20,6 +20,8 @@ import static org.springframework.ldap.query.LdapQueryBuilder.query;
 @Service
 public class GroupRepository implements BaseLdapNameAware {
 
+    private final static String UNIQUEMEMBER = "uniqueMember";
+
     @Autowired
     private LdapTemplate ldapTemplate;
     private LdapName baseLdapPath;
@@ -39,7 +41,7 @@ public class GroupRepository implements BaseLdapNameAware {
         Name personDn = buildPersonDn(p);
 
         DirContextOperations ctx = ldapTemplate.lookupContext(groupDn);
-        ctx.addAttributeValue("uniqueMember", personDn);
+        ctx.addAttributeValue(UNIQUEMEMBER, personDn);
 
         ldapTemplate.modifyAttributes(ctx);
     }
@@ -49,7 +51,7 @@ public class GroupRepository implements BaseLdapNameAware {
         Name personDn = buildPersonDn(p);
 
         DirContextOperations ctx = ldapTemplate.lookupContext(groupDn);
-        ctx.addAttributeValue("uniqueMember", personDn);
+        ctx.addAttributeValue(UNIQUEMEMBER, personDn);
 
         ldapTemplate.modifyAttributes(ctx);
     }
@@ -59,7 +61,7 @@ public class GroupRepository implements BaseLdapNameAware {
         Name personDn = buildPersonDn(p);
 
         DirContextOperations ctx = ldapTemplate.lookupContext(groupDn);
-        ctx.removeAttributeValue("uniqueMember", personDn);
+        ctx.removeAttributeValue(UNIQUEMEMBER, personDn);
 
         ldapTemplate.modifyAttributes(ctx);
     }
@@ -69,7 +71,7 @@ public class GroupRepository implements BaseLdapNameAware {
         Name personDn = buildPersonDn(p);
 
         DirContextOperations ctx = ldapTemplate.lookupContext(groupDn);
-        ctx.removeAttributeValue("uniqueMember", personDn);
+        ctx.removeAttributeValue(UNIQUEMEMBER, personDn);
 
         ldapTemplate.modifyAttributes(ctx);
     }
@@ -99,7 +101,7 @@ public class GroupRepository implements BaseLdapNameAware {
         public Group doMapFromContext(DirContextOperations context) {
             Group group = new Group();
             group.setName(context.getStringAttribute("cn"));
-            Object[] members = context.getObjectAttributes("uniqueMember");
+            Object[] members = context.getObjectAttributes(UNIQUEMEMBER);
             for (Object member : members){
                 Name memberDn = LdapNameBuilder.newInstance(String.valueOf(member)).build();
                 group.addMember(memberDn);

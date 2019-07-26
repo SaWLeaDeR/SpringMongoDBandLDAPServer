@@ -3,7 +3,7 @@ package com.finartz.security.app.captcha;
 public class ReCaptchaResponse {
 
     private boolean success;
-    private String challenge_ts;
+    private String challengeTs;
     private String hostname;
 
     public boolean isSuccess() {
@@ -14,12 +14,12 @@ public class ReCaptchaResponse {
         this.success = success;
     }
 
-    public String getChallenge_ts() {
-        return challenge_ts;
+    public String getChallengeTs() {
+        return challengeTs;
     }
 
-    public void setChallenge_ts(String challenge_ts) {
-        this.challenge_ts = challenge_ts;
+    public void setChallengeTs(String challengeTs) {
+        this.challengeTs = challengeTs;
     }
 
     public String getHostname() {

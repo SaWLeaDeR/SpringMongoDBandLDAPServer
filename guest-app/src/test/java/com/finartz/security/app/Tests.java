@@ -1,27 +1,71 @@
 package com.finartz.security.app;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finartz.security.app.crypto.PasswordEncode;
-import org.apache.commons.codec.Charsets;
+import com.finartz.security.app.domain.AdminUser;
+import com.finartz.security.app.repository.GroupRepository;
+import com.finartz.security.app.repository.PersonRepository;
+import com.finartz.security.app.service.AdminUserServiceImpl;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.client.MockRestServiceServer;
+import org.springframework.web.client.RestTemplate;
 
+import javax.naming.ldap.LdapName;
 import java.nio.charset.Charset;
 import java.util.Base64;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Tests {
+
+    private static final String ADMINS = "/admins";
+    private static final String SLASH = "/";
+
+    @Value("${landon.guest.service.url}")
+    private String adminServiceUrl;
+    @Mock
+    private RestTemplate restTemplate;
+    @Autowired
+    private AdminUserServiceImpl empService = new AdminUserServiceImpl(restTemplate);
+
+    private MockRestServiceServer mockServer;
+    private ObjectMapper mapper = new ObjectMapper();
+
+    @Autowired
+    private PersonRepository personRepository;
+    @Autowired
+    private GroupRepository groupRepository;
+
+    @Before
+    public void init() {
+        mockServer = MockRestServiceServer.createServer(restTemplate);
+    }
+
     private PasswordEncode passwordEncode;
+    @Autowired
+    private LdapTemplate ldapTemplate;
+    private LdapName baseLdapPath;
 
     @Test
     public void encryptPasswordTest(){
         String a =passwordEncode.encryptPassword("password");
         System.out.println("PASSWORD "+a+" PASSWORD");
-
     }
 
     @Test
@@ -29,6 +73,24 @@ public class Tests {
         System.out.println(DigestUtils.sha1Hex("password"));
         String hashedVal = Base64.getEncoder().encodeToString(DigestUtils.sha1("password".getBytes(Charset.forName("UTF-8"))));
         System.out.println("hashed val   "+ hashedVal);
+    }
+
+    @Test
+    public void testGetAllAdminUser(){
+        String url = adminServiceUrl + ADMINS;
+        HttpEntity<String> request = new HttpEntity<>(null, null);
+        System.out.println(this.restTemplate.exchange(url, HttpMethod.GET, request, new ParameterizedTypeReference<List<AdminUser>>() {
+        }).getBody());
+    }
+
+    @Test
+    public void testGoupRepositoryAddMemberToGroup(){
+        AdminUser adminUser = new AdminUser("123","123","fatih",
+                "koyuncu","4567890",23,"male",
+                "Ist","Student",
+                Stream.of("Reading book","ride Biycle").collect(toList()),
+                "BSc","1234");
+        groupRepository.addMemberToGroup("admin",adminUser);
     }
 
 

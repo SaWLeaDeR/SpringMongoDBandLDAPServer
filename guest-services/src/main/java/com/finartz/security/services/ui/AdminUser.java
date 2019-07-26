@@ -1,6 +1,5 @@
 package com.finartz.security.services.ui;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.io.Serializable;
@@ -25,7 +24,7 @@ public class AdminUser implements Serializable {
     private String education;
     private String userPassword;
 
-    public String  getId() {
+    public String getId() {
         return _id;
     }
 

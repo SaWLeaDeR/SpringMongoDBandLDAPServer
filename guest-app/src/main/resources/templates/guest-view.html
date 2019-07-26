@@ -22,6 +22,43 @@
 
     </script>
     <script>
+        $(document).ready(function() {
+
+            $('#emailAddress').focusout(function(){
+
+                $('#emailAddress').filter(function(){
+                    var emil=$('#emailAddress').val();
+                    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                    if( !emailReg.test( emil ) ) {
+                        alert('Please enter valid email');
+                        $('#emailAddress').val("");
+                    } else {
+                        alert('Thank you for your valid email');
+                    }
+                })
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            $('#confirmPassword').focusout(function(){
+
+                $('#confirmPassword, #password').filter(function(){
+                    var pass=$('#confirmPassword').val();
+                    var confirm = $('#password').val();
+
+                    if( pass.valueOf() == confirm.valueOf() )  {
+                        alert('Thank you for your valid password');
+                    } else {
+                        alert('Please enter valid password');
+                        $('#confirmPassword').val("");
+                    }
+                })
+            });
+        });
+    </script>
+    <script>
         (function ($) {
             $.fn.inputFilter = function (inputFilter) {
                 return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
@@ -99,24 +136,32 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col">
+                <div class="col-7">
                     <input th:id="address" th:name="address" type="text" class="form-control" placeholder="Address"
                            maxlength="50" th:value="${guest != null} ? ${guest.address}"/>
                 </div>
-                <div class="col-7">
+                <div class="col">
                     <input th:id="country" th:name="country" type="text" class="form-control" placeholder="Country"
                            maxlength="10" th:value="${guest != null} ? ${guest.country}"/>
+                </div>
+                <div class="col">
+                    <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State"
+                           maxlength="3" th:value="${guest != null} ? ${guest.state}"/>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input th:id="state" th:name="state" type="text" class="form-control" placeholder="State"
-                           maxlength="2" th:value="${guest != null} ? ${guest.state}"/>
+                    <input
+                            th:id="password"
+                            th:name="password" type="password" class="form-control" placeholder="password"
+                            required="required" maxlength="10"
+                            th:value="${guest != null} ? ${guest.password}"/>
                 </div>
                 <div class="col">
-                    <input th:id="password" th:name="password" type="password" class="form-control"
-                           placeholder="Password"
-                           maxlength="16" th:value="${guest != null} ? ${guest.password}"/>
+                    <input
+                            th:id="confirmPassword"
+                            th:name="confirmPassword" type="password" class="form-control" placeholder="confirmPassword"
+                            required="required" maxlength="10"/>
                 </div>
             </div>
 <!--            <div class="form-row">-->

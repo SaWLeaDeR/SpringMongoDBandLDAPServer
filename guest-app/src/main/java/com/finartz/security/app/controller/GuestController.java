@@ -2,7 +2,7 @@ package com.finartz.security.app.controller;
 
 import com.finartz.security.app.domain.Guest;
 import com.finartz.security.app.model.GuestModel;
-import com.finartz.security.app.service.GuestService;
+import com.finartz.security.app.service.GuestServiceImpl;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,11 @@ public class GuestController {
 
     private static final String GUESTVIEW = "guest-view";
     private static final String GUEST = "guest";
-    private final GuestService guestService;
+    private final GuestServiceImpl guestServiceImpl;
 
-    public GuestController(GuestService guestService) {
+    public GuestController(GuestServiceImpl guestServiceImpl) {
         super();
-        this.guestService = guestService;
+        this.guestServiceImpl = guestServiceImpl;
     }
 
     @GetMapping(value = {"/", "/index"})
@@ -49,7 +49,7 @@ public class GuestController {
     @GetMapping(value = "/guests")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getGuests(Model model) {
-        List<Guest> guests = this.guestService.getAllGuests();
+        List<Guest> guests = this.guestServiceImpl.getAllGuests();
         model.addAttribute("guests", guests);
         return "guests-view";
     }
@@ -67,7 +67,7 @@ public class GuestController {
         String hashedVal = Base64.getEncoder().encodeToString(DigestUtils.sha1(guestModel.getPassword().getBytes(Charset.forName("UTF-8"))));
         hashedVal = "{SHA}" + hashedVal;
         guestModel.setPassword(hashedVal);
-        Guest guest = this.guestService.addGuest(guestModel,hashedVal);
+        Guest guest = this.guestServiceImpl.addGuest(guestModel,hashedVal);
         model.addAttribute(GUEST, guest);
         request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.TEMPORARY_REDIRECT);
         return new ModelAndView("redirect:/guests/" + guest.getId());
@@ -76,7 +76,7 @@ public class GuestController {
     @GetMapping(value = "/guests/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getGuest(Model model, @PathVariable ObjectId id) {
-        Guest guest = this.guestService.getGuest(id);
+        Guest guest = this.guestServiceImpl.getGuest(id);
         model.addAttribute(GUEST, guest);
         return GUESTVIEW;
     }
@@ -87,7 +87,7 @@ public class GuestController {
         String hashedVal = Base64.getEncoder().encodeToString(DigestUtils.sha1(guestModel.getPassword().getBytes(Charset.forName("UTF-8"))));
         hashedVal = "{SHA}" + hashedVal;
         guestModel.setPassword(hashedVal);
-        this.guestService.updateGuest(id, guestModel,hashedVal);
+        this.guestServiceImpl.updateGuest(id, guestModel,hashedVal);
         model.addAttribute(GUEST, null);
         model.addAttribute("guestModel", new GuestModel());
         return GUESTVIEW;
@@ -96,7 +96,7 @@ public class GuestController {
     @DeleteMapping(value = "/guests/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteGuest(@PathVariable ObjectId id) {
-        this.guestService.deleteGuest(id);
+        this.guestServiceImpl.deleteGuest(id);
         return "guests-view";
     }
 }

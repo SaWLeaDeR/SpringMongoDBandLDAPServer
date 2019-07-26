@@ -1,6 +1,6 @@
 
 ]squid:UselessImportCheck"4Remove this unused import 'org.bson.types.ObjectId'.(Ü¡‰çıÿÿÿÿ
-squid:UselessImportCheck"XRemove this unused import 'org.springframework.data.mongodb.repository.MongoRepository'.(ş§õæıÿÿÿÿ
 asquid:CommentedOutCodeLine
 "<This block of commented-out lines of code should be removed.(Ì¥ª7
 ksquid:UselessImportCheck"BRemove this unused import 'com.finartz.security.app.domain.Guest'.(¿øëûÿÿÿÿ
+squid:UselessImportCheck"XRemove this unused import 'org.springframework.data.mongodb.repository.MongoRepository'.(ş§õæıÿÿÿÿ

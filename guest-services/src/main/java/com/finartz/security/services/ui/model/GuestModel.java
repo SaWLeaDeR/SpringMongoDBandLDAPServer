@@ -13,7 +13,10 @@ public class GuestModel {
     private String phoneNumber;
     private String password;
 
-    public GuestModel(String firstName, String lastName, String emailAddress, String address, String country, String state, String phoneNumber) {
+    public GuestModel(String userName, String firstName, String lastName,
+                      String emailAddress, String address, String country,
+                      String state, String phoneNumber, String password) {
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -21,6 +24,7 @@ public class GuestModel {
         this.country = country;
         this.state = state;
         this.phoneNumber = phoneNumber;
+        this.password = password;
     }
 
     public String getUserName() {

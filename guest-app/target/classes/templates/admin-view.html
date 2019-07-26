@@ -56,6 +56,25 @@
             }
         }
     </script>
+    <script>
+        $(document).ready(function() {
+
+            $('#confirmPassword').focusout(function(){
+
+                $('#confirmPassword, #userPassword').filter(function(){
+                    var pass=$('#confirmPassword').val();
+                    var confirm = $('#userPassword').val();
+
+                    if( pass.valueOf() == confirm.valueOf() )  {
+                        alert('Thank you for your valid password');
+                    } else {
+                        alert('Please enter valid password');
+                        $('#emailAddress').val("");
+                    }
+                })
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -120,12 +139,18 @@
                     <input th:id="education" th:name="education" type="text" class="form-control" placeholder="education"
                            maxlength="50" th:value="${admin != null} ? ${admin.education}"/>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="col">
                     <input th:id="userPassword" th:name="userPassword" type="password" class="form-control" placeholder="password"
                            maxlength="50" th:value="${admin != null} ? ${admin.userPassword}"/>
                 </div>
-
+                <div class="col">
+                    <input th:id="confirmPassword" th:name="confirmPassword" type="password" class="form-control" placeholder="confirmPassword"
+                           maxlength="50"/>
+                </div>
             </div>
+
 
 
 

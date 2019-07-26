@@ -2,6 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}"lang="en">
 <head>
     <title>Home</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#delete').on('click', function () {
+                if (confirm("Are you sure you want to delete this resource?")) {
+                    $.ajax({
+                        method: 'DELETE',
+                    }).done(function () {
+                        console.log('deleted');
+                        // window.location.reload(true)
+                        window.location.replace("/admins");
+                    });
+                }
+            });
+        })
+
+    </script>
 </head>
 <body>
 
@@ -14,9 +30,6 @@
             <div class="col">
                 <a th:href="@{/admins/add}">Add New Admin</a>
             </div>
-            <div class="col">
-                <a id="toggle-edit" th:href="@{/admins}">Edit</a>
-            </div>
         </div>
         <table id="table" class="table table-striped table-sm">
             <thead>
@@ -25,7 +38,6 @@
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Gender</th>
-                <th class="hidden edit-actions" scope="col" Edits></th>
             </thead>
             <tbody>
                 <tr th:each="admin : ${admins}">
@@ -34,14 +46,6 @@
                     <td th:text="${admin.firstName}"></td>
                     <td th:text="${admin.lastName}"></td>
                     <td th:text="${admin.gender}"></td>
-                    <td class="hidden edit-actions">
-                        <button type="button" class="btn btn-xs btn-success">
-                            <span class="glyphicon">&#x270f;</span>
-                        </button>
-                        <button type="button" class="btn btn-outline-danger">
-                            <span class=aria-hidden="true">&times;</span>
-                        </button>
-                    </td>
                 </tr>
             </tbody>
         </table>

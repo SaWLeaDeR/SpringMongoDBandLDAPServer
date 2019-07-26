@@ -1,5 +1,4 @@
 
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(áÔıüÿÿÿÿ
-Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Éà™ÀÂ-
-gsquid:S2147"DCombine this catch with the one at line 22, which has the same body.(ĞĞ¹óúÿÿÿÿ8è•šÀÂ-
 ?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(áÔıüÿÿÿÿ
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Éà™ÀÂ-

@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class GuestAppApplication {
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         SpringApplication.run(GuestAppApplication.class, args);
     }
 
@@ -19,6 +19,4 @@ public class GuestAppApplication {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
-
 }

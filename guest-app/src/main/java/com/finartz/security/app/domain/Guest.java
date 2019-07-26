@@ -1,6 +1,5 @@
 package com.finartz.security.app.domain;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.io.Serializable;

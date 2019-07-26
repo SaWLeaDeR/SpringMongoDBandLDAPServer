@@ -21,7 +21,6 @@ public class PasswordEncode {
             sha1 = byteToHex(crypt.digest());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            log.info(e.getMessage());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
             log.info(e.getMessage());

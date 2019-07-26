@@ -1,6 +1,6 @@
 
-Ysquid:S00107"AConstructor has 8 parameters, which is greater than 7 authorized.(—ïó¬
-isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ïó¬
-ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í—ø¨ýÿÿÿÿ
-dsquid:UselessImportCheck"4Remove this unused import 'org.bson.types.ObjectId'.(Ü¡‰çýÿÿÿÿ8ìÉøÅÂ-
-isquid:S001179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÉÆ—
+nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜãêŒþÿÿÿÿ
+_squid:S00107"BConstructor has 10 parameters, which is greater than 7 authorized.(ÜãêŒþÿÿÿÿ
+ksquid:S00116
+"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í—ø¨ýÿÿÿÿ
+isquid:S00117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÉÆ—
