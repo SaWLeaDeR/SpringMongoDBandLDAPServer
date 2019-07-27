@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="02cd0d9a-d890-4acc-b194-9121173f1ee6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/controller/AdminUserConroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/controller/AdminUserConroller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guest-app/target/classes/com/finartz/security/app/service/IAdminUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guest-app/target/classes/com/finartz/security/app/service/IGuestService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guest-app/target/classes/templates/admin-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/guest-app/target/classes/templates/admin-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guest-app/target/classes/com/finartz/security/app/service/AdminUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/guest-app/target/classes/com/finartz/security/app/service/AdminUserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/guest-services/target/" />
@@ -23,12 +20,18 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="363">
+              <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1260#1289#1" expanded="true" />
+                <element signature="e#1448#1449#0" expanded="true" />
+                <element signature="e#1496#1497#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/domain/AdminUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="368">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +58,8 @@
       <list>
         <option value="$PROJECT_DIR$/guest-app/src/main/resources/templates/admin-view.html" />
         <option value="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/controller/AdminUserConroller.java" />
-        <option value="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java" />
         <option value="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/domain/AdminUser.java" />
+        <option value="$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -85,111 +88,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringMongoDBandLDAPServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guest-services" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,7 +155,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564131045581</updated>
-      <workItem from="1564131048761" duration="7995000" />
+      <workItem from="1564131048761" duration="8283000" />
+      <workItem from="1564173212045" duration="626000" />
+      <workItem from="1564216505413" duration="894000" />
     </task>
     <task id="LOCAL-00001" summary="intellij test">
       <created>1564131434173</created>
@@ -263,11 +166,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564131434173</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="intellij test">
+      <created>1564152902256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564152902256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7995000" />
+    <option name="totallyTimeSpent" value="9803000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,6 +190,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -287,7 +198,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.17537314" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Java Enterprise" order="1" weight="0.32936078" />
@@ -298,7 +209,7 @@
       <window_info anchor="bottom" id="Tail" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="10" />
       <window_info anchor="bottom" id="Message" order="11" />
       <window_info anchor="bottom" id="Find" order="12" />
@@ -307,7 +218,8 @@
       <window_info anchor="bottom" id="Cvs" order="15" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="16" weight="0.4" />
       <window_info anchor="bottom" id="SonarLint" order="17" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="18" visible="true" weight="0.27843988" />
+      <window_info anchor="bottom" id="Run Dashboard" order="18" weight="0.27843988" />
+      <window_info anchor="bottom" id="GitHub Pull Requests" order="19" visible="true" weight="0.32936078" />
       <window_info anchor="right" id="Codota" order="0" />
       <window_info anchor="right" id="Palette" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -349,19 +261,27 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intellij test" />
     <option name="LAST_COMMIT_MESSAGE" value="intellij test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/GuestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/GuestController.java" />
     <entry file="file://$PROJECT_DIR$/guest-app/src/test/java/com/finartz/security/app/Tests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -383,13 +303,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/IAdminUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/IAdminUserService.java" />
     <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -446,16 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/domain/AdminUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/guest-services/src/main/java/com/finartz/security/services/service/AdminServicesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -463,10 +367,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/domain/AdminUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guest-app/target/classes/com/finartz/security/app/service/AdminUserServiceImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/guest-app/src/main/java/com/finartz/security/app/service/AdminUserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="363">
+          <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1260#1289#1" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

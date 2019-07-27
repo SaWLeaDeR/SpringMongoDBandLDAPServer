@@ -39,7 +39,6 @@ public class AdminUserServiceImpl implements AdminUserService {
         this.restTemplate = restTemplate;
     }
 
-
     @Override
     public List<AdminUser> getAllAdminUser() {
         String url = adminServiceUrl + ADMINS;
